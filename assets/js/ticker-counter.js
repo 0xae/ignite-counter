@@ -7,10 +7,15 @@ $(document).ready(function (){
 function updateCounter() {
     firebase.database()
     .ref('curr_presentation_state')
-    .on('value', function(snapshot) {
+    .once('value')
+    .then(function(snapshot) {
         var stateObj=snapshot.val();
+        var current=$("#counter-ticker").text();
+        console.info("currentTime: ", current);
+
         if (stateObj && stateObj.state=='paused') {
             $("#counter-ticker-paused").show();
+            console.info("paused");
             return;
         }
 
