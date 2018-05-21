@@ -43,22 +43,34 @@
     <div class="container container-table">
         <div class="row vertical-center-row">
             <div class="text-center col-md-12 col-xs-12" id="playingState">
-                <h1 class="counter-ticker" style="display: none" id="counter-ticker-paused">
+                <h1 class="counter-ticker">
+                    <span id="counter-ticker">PLAYING</span>
+                </h1>
+
+                <button type="button" class="btn btn-default" id="pauseSlide">
+                    <i class="fa fa-pause"></i>&nbsp;&nbsp;PAUSE
+                </button>
+            </div>
+
+            <div class="text-center col-md-12 col-xs-12" style="display: none" id="pausedState">
+                <h1 class="counter-ticker">
                     PAUSED
                 </h1>
+                <br>
+                <button type="button" class="btn btn-default" id="continueSlide">
+                    <i class="fa fa-play"></i>&nbsp;&nbsp;CONTINUE
+                </button>
+            </div>
 
-                <h1 class="counter-ticker">
-                    <span id="counter-ticker">15</span>s
+            <div class="text-center col-md-12 col-xs-12">
+                <h1>
+                    Time <span id="slide-time">0</span>s
+                </h1>
+
+                <h1>
+                    Slide <span id="slide-number">0</span>
                 </h1>
             </div>
-        </div>
-    </div>
-
-    <div class="footer">
-        <div class="text-right">
-            <strong>Slide 
-                <span id="slideNumber">1</span>
-            </strong>
         </div>
     </div>
 
@@ -66,7 +78,7 @@
     <script src="jquery-3.3.1.slim.min.js"></script>
     <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
     <script src="dist/js/bootstrap.min.js"></script>
-    <script src="assets/js/ticker-counter.js"></script>
+    <script src="assets/js/presentation-control.js"></script>
 </body>
 </html>
 
