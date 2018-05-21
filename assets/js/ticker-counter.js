@@ -31,7 +31,7 @@ function updateCounter() {
             newValue=current-1;
         }
 
-        if (slide > 3) {
+        if (slide > 20) {
             var obj={state: 'paused'};
             firebase.database()
             .ref('curr_presentation_state')
